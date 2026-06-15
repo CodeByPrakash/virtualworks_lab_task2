@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="form-container">
+            <h2>Create Your Profile</h2>
+            <p>Enter your details below to generate a beautiful profile card.</p>
+            <form id="profile-form">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="e.g. Jane Doe" required>
+                </div>
+                <div class="input-group">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" placeholder="Tell us about yourself..." required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="image_url">Image URL</label>
+                    <input type="url" id="image_url" placeholder="https://example.com/avatar.jpg" required>
+                </div>
+                <button type="submit" id="generate-btn">Generate Card</button>
+            </form>
+        </div>
+        
+        <div class="card-container" id="card-container">
+            <!-- Profile card will be injected here -->
+            <div class="empty-state">
+                <p>Your card will appear here</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
